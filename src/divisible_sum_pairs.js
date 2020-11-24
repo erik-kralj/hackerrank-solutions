@@ -2,17 +2,15 @@ const assert = require("assert").strict;
 
 function divisibleSumPairs(n, k, ar) {
     let pairs = 0;
-
     for (let i = 0; i < n; i++) {
         const ival = ar[i];
         for (let j = 0; j < n; j++) {
             const jval = ar[j];
-            if (ival < jval && (ival + jval) % k === 0) {
+            if (i < j && (ival + jval) % k === 0) {
                 pairs += 1;
             }
         }
     }
-
     return pairs;
 }
 
